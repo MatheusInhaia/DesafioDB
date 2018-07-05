@@ -22,7 +22,7 @@ public WebDriver driver;
 	
 
 	public void clickElement(WebElement ele) throws InterruptedException {
-			ele.wait(3);
+			ele.wait(1);
 			if(ele.isDisplayed()) {
 				ele.click();
 			}

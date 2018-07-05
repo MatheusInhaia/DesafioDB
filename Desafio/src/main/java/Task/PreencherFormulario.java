@@ -15,6 +15,10 @@ public class PreencherFormulario extends Metodos {
 		this.signIn = new SignInPage(driver);
 	}
 	
+	public void criarConta(String email) {
+		inserirTexto(signIn.campoDeTextoEmail(), email);
+	}
+	
 	
 	//YOUR PERSONAL INFORMATION
 	public void selecionaTitulo(String titulo) throws InterruptedException {
