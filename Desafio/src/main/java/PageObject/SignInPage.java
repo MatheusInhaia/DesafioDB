@@ -12,8 +12,8 @@ public class SignInPage {
 	String createAnAccountBotao = "//*[@id=\"SubmitCreate\"]";
 	
 	//YOUR PERSONAL INFORMATION
-	String senhorBotao = "";
-	String senhoraBotao = "";
+	String senhorBotao = "//*[@id=\"id_gender1\"]";
+	String senhoraBotao = "//*[@id=\"id_gender2\"]";
 	String campoDeTextoPrimeiroNome = "//*[@id=\"customer_firstname\"]";
 	String campoDeTextoUltimoNome = "//*[@id=\"customer_lastname\"]";
 	String CampoDeTextoSenha = "//*[@id=\"passwd\"]";
@@ -27,6 +27,7 @@ public class SignInPage {
 	String campoDeTextoEndereco = "//*[@id=\"address1\"]";
 	String campoDeTextoCidade = "//*[@id=\"city\"]";
 	String selecionaEstado = "//*[@id=\"id_state\"]";
+	String campoDeTextoCep = "//*[@id=\"postcode\"]";
 	String selecionaPais = "//*[@id=\"id_country\"]";
 	String campoDeTextoTelefone = "//*[@id=\"phone_mobile\"]";
 	String campoDeTextoEnderecoAlternativo = "//*[@id=\"alias\"]";
@@ -101,6 +102,10 @@ public class SignInPage {
 	
 	public WebElement selecionaEstado() {
 		return driver.findElement(By.xpath(selecionaEstado));
+	}
+	
+	public WebElement campoDeTextoCep() {
+		return driver.findElement(By.xpath(campoDeTextoCep));
 	}
 	
 	public WebElement selecionaPais() {
