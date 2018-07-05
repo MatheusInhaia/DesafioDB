@@ -2,6 +2,7 @@ package Utilitarios;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 
 
@@ -25,6 +26,21 @@ public WebDriver driver;
 			if(ele.isDisplayed()) {
 				ele.click();
 			}
+	}
+	
+	public void selecionarElemento(WebElement ele, String texto) {
+		Select select = new Select(ele);
+	
+		if(ele.isDisplayed()) {
+			select.selectByVisibleText(texto);
+		}
+	}
+	
+	public void inserirTexto(WebElement ele, String texto) {
+		if(ele.isDisplayed()) {
+			ele.clear();
+			ele.sendKeys(texto);
+		}
 	}
 	
 	public WebDriver getDriver() {
