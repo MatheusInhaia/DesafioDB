@@ -29,88 +29,88 @@ public class PreencherFormulario extends Metodos {
 		}
 	}
 	
-	public void inserirPrimeiroNome(String nome, WebElement ele) {
-		inserirTexto(ele, nome);
+	public void inserirPrimeiroNome(String nome) {
+		inserirTexto(signIn.campoDeTextoPrimeiroNome(), nome);
 	}
 	
-	public void inserirUltimoNome(String nome, WebElement ele) {
-		inserirTexto(ele, nome);
+	public void inserirUltimoNome(String nome) {
+		inserirTexto(signIn.campoDeTextoUltimoNome(), nome);
 	}
 	
-	public void inserirSenha(String senha, WebElement ele) {
-		inserirTexto(ele, senha);
+	public void inserirSenha(String senha) {
+		inserirTexto(signIn.campoDeTextoSenha(), senha);
 	}
 	
-	public void selecionaDiaAniversario(String dia, WebElement ele) {
-		selecionarElemento(ele, dia);
+	public void selecionaDiaAniversario(String dia) {
+		selecionarElemento( signIn.selecionaDiaAniversario(), dia);
 	}
 	
-	public void selecionaMesAniversario(String mes, WebElement ele) {
-		selecionarElemento(ele, mes);
+	public void selecionaMesAniversario(String mes) {
+		selecionarElemento(signIn.selecionaMesAniversario(), mes);
 	}
 	
-	public void selecionaAnoAniversario(String ano, WebElement ele) {
-		selecionarElemento(ele, ano);
+	public void selecionaAnoAniversario(String ano) {
+		selecionarElemento(signIn.selecionaAnoAniversario(), ano);
 	}
 	
 	public void preencherInformacoesPessoais(String titulo, String primeiroNome, String ultimoNome, String senha, String dia, String mes, String ano) throws InterruptedException {
 		selecionaTitulo(titulo);
-		inserirPrimeiroNome(primeiroNome, signIn.campoDeTextoPrimeiroNome());
-		inserirUltimoNome(ultimoNome, signIn.campoDeTextoUltimoNome());
-		inserirSenha(senha, signIn.campoDeTextoSenha());
-		selecionaDiaAniversario(dia, signIn.selecionaDiaAniversario());
-		selecionaMesAniversario(mes, signIn.selecionaMesAniversario());
-		selecionaAnoAniversario(ano, signIn.selecionaAnoAniversario());
+		inserirPrimeiroNome(primeiroNome);
+		inserirUltimoNome(ultimoNome);
+		inserirSenha(senha);
+		selecionaDiaAniversario(dia);
+		selecionaMesAniversario(mes);
+		selecionaAnoAniversario(ano);
 	}
 	
 	
 	//YOUR ADDRESS
-	public void inserirPrimeiroNomeAddress(String nome, WebElement ele) {
-		inserirTexto(ele, nome);
+	public void inserirPrimeiroNomeAddress(String nome) {
+		inserirTexto(signIn.campoDeTextoPrimeiroNomeAddress(), nome);
 	}
 	
-	public void inserirUltimoNomeAddress(String nome, WebElement ele) {
-		inserirTexto(ele, nome);
+	public void inserirUltimoNomeAddress(String nome) {
+		inserirTexto(signIn.campoDeTextoUltimoNomeAddress(), nome);
 	}
 	
-	public void inserirEndereco(String endereco, WebElement ele) {
-		inserirTexto(ele, endereco);
+	public void inserirEndereco(String endereco) {
+		inserirTexto(signIn.campoDeTextoEndereco(), endereco);
 	}
 	
-	public void inserirCidade(String cidade, WebElement ele) {
-		inserirTexto(ele, cidade);
+	public void inserirCidade(String cidade) {
+		inserirTexto(signIn.campoDeTextoCidade(), cidade);
 	}
 	
-	public void selecionaEstado(String estado, WebElement ele) {
-		selecionarElemento(ele, estado);
+	public void selecionaEstado(String estado) {
+		selecionarElemento(signIn.selecionaEstado(), estado);
 	}
 	
-	public void inserirCep(String cep, WebElement ele) {
-		inserirTexto(ele, cep);
+	public void inserirCep(String cep) {
+		inserirTexto(signIn.campoDeTextoCep(), cep);
 	}
 	
-	public void selecionarPais(String pais, WebElement ele) {
-		selecionarElemento(ele, pais);
+	public void selecionarPais(String pais) {
+		selecionarElemento(signIn.selecionaPais(), pais);
 	}
 	
-	public void inserirTelefone(String telefone, WebElement ele) {
-		inserirTexto(ele, telefone);
+	public void inserirTelefone(String telefone) {
+		inserirTexto(signIn.campoDeTextoTelefone(), telefone);
 	}
 	
-	public void inserirEnderecoAlternativo(String endereco, WebElement ele) {
-		inserirTexto(ele, endereco);
+	public void inserirEnderecoAlternativo(String endereco) {
+		inserirTexto( signIn.campoDeTextoEnderecoAlternativo(), endereco);
 	}
 	
 	public void preencherEndereco(String primeiroNome, String ultimoNome, String endereco, String cidade, String estado, String cep, String pais, String telefone, String enderecoAlternativo) {
-		inserirPrimeiroNomeAddress(primeiroNome, signIn.campoDeTextoPrimeiroNomeAddress());
-		inserirUltimoNomeAddress(ultimoNome, signIn.campoDeTextoUltimoNomeAddress());
-		inserirEndereco(endereco, signIn.campoDeTextoEndereco());
-		inserirCidade(cidade, signIn.campoDeTextoCidade());
-		selecionaEstado(estado, signIn.selecionaEstado());
-		inserirCep(cep, signIn.campoDeTextoCep());
-		selecionarPais(pais, signIn.selecionaPais());
-		inserirTelefone(telefone, signIn.campoDeTextoTelefone());
-		inserirEnderecoAlternativo(enderecoAlternativo, signIn.campoDeTextoEnderecoAlternativo());
+		inserirPrimeiroNomeAddress(primeiroNome);
+		inserirUltimoNomeAddress(ultimoNome);
+		inserirEndereco(endereco);
+		inserirCidade(cidade);
+		selecionaEstado(estado);
+		inserirCep(cep);
+		selecionarPais(pais);
+		inserirTelefone(telefone);
+		inserirEnderecoAlternativo(enderecoAlternativo);
 	}
 	
 	
