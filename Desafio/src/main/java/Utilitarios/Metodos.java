@@ -23,14 +23,11 @@ public WebDriver driver;
 		   return this;
 	}
 	
-	public WebDriver getChromeDriver() {
+	public static WebDriver getChromeDriver() {
 		WebDriverManager.chromedriver().setup();
 		return new ChromeDriver();
 	}
 	
-	public void maximize() {
-		driver.manage().window().maximize();
-	}
 	
 	public WebDriver getDriver() {
 		return driver;
@@ -38,7 +35,7 @@ public WebDriver driver;
 	
 
 	public void clickElement(WebElement ele) throws InterruptedException {
-			ele.wait(1);
+			//ele.wait(1);
 			if(ele.isDisplayed()) {
 				ele.click();
 			}

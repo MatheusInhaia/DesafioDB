@@ -1,6 +1,7 @@
 package Task;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import PageObject.InicialPage;
 import PageObject.SummaryPage;
@@ -25,26 +26,37 @@ public class EscolherProduto extends Metodos {
 	}
 	
 	public void selecionaBlouse() throws InterruptedException {
-		clickElement(womenPage.blouseBotao());
+		Actions action = new Actions(driver);
+		action.moveToElement(womenPage.blouseBotao()).perform();	
 	}
 	
 	public void adicionarAoCarrinho() throws InterruptedException {
 		clickElement(womenPage.addToCartBotao());
 	}
 	
-	public void proceedToCheckout() throws InterruptedException {
-		clickElement(womenPage.proceedToCheckoutBotao());
+	public void meuCarrinhoBotao() throws InterruptedException {
+		Actions action = new Actions(driver);
+		action.moveToElement(womenPage.meuCarrinhoBotao()).perform();
+		clickElement(womenPage.meuCarrinhoBotao());
 	}
 	
 	public void proceedToCheckoutSummary() throws InterruptedException {
 		clickElement(summaryPage.proceedToCheckoutBotao());
 	}
 	
+	public void continuarNoShopping() throws InterruptedException {
+		Actions action = new Actions(driver);
+		action.moveToElement(womenPage.continuarNoShopping()).perform();
+		clickElement(womenPage.continuarNoShopping());
+	}
+	
 	public void escolhendoProduto() throws InterruptedException {
 		acessaPaginaWomen();
 		selecionaBlouse();
 		adicionarAoCarrinho();
-		proceedToCheckout();
+		Thread.sleep(1000);
+		continuarNoShopping();
+		meuCarrinhoBotao();
 		proceedToCheckoutSummary();
 	}
 }
