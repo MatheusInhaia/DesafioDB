@@ -11,19 +11,14 @@ public class SignInPage {
 	String campoDeTextoEmail = "//*[@id=\"email_create\"]";
 	String createAnAccountBotao = "//*[@id=\"SubmitCreate\"]";
 	
+	
 	//YOUR PERSONAL INFORMATION
-	String senhorBotao = "//*[@id=\"id_gender1\"]";
-	String senhoraBotao = "//*[@id=\"id_gender2\"]";
 	String campoDeTextoPrimeiroNome = "//*[@id=\"customer_firstname\"]";
 	String campoDeTextoUltimoNome = "//*[@id=\"customer_lastname\"]";
 	String CampoDeTextoSenha = "//*[@id=\"passwd\"]";
-	String selecionaDiaAniversario = "//*[@id=\"days\"]";
-	String selecionaMesAniversario = "//*[@id=\"months\"]";
-	String selecionaAnoAniversario = "//*[@id=\"years\"]";
+	
 	
 	//YOUR ADDRESS
-	String campoDetextoPrimeiroNomeAddress = "//*[@id=\"firstname\"]";
-	String campoDeTextoUltimoNomeAddress = "//*[@id=\"lastname\"]";
 	String campoDeTextoEndereco = "//*[@id=\"address1\"]";
 	String campoDeTextoCidade = "//*[@id=\"city\"]";
 	String selecionaEstado = "//*[@id=\"id_state\"]";
@@ -50,14 +45,6 @@ public class SignInPage {
 	
 	
 	//YOUR PERSONAL INFORMATION
-	public WebElement senhorBotao() {
-		return driver.findElement(By.xpath(senhorBotao));
-	}
-	
-	public WebElement SenhoraBotao() {
-		return driver.findElement(By.xpath(senhoraBotao));
-	}
-	
 	public WebElement campoDeTextoPrimeiroNome() {
 		return driver.findElement(By.xpath(campoDeTextoPrimeiroNome));
 	}
@@ -70,28 +57,8 @@ public class SignInPage {
 		return driver.findElement(By.xpath(CampoDeTextoSenha));
 	}
 	
-	public WebElement selecionaDiaAniversario() {
-		return driver.findElement(By.xpath(selecionaDiaAniversario));
-	}
-	
-	public WebElement selecionaMesAniversario() {
-		return driver.findElement(By.xpath(selecionaMesAniversario));
-	}
-	
-	public WebElement selecionaAnoAniversario() {
-		return driver.findElement(By.xpath(selecionaAnoAniversario));
-	}
-	
-	
+
 	//YOUR ADDRESS
-	public WebElement campoDeTextoPrimeiroNomeAddress() {
-		return driver.findElement(By.xpath(campoDetextoPrimeiroNomeAddress));
-	}
-	
-	public WebElement campoDeTextoUltimoNomeAddress() {
-		return driver.findElement(By.xpath(campoDeTextoUltimoNomeAddress));
-	}
-	
 	public WebElement campoDeTextoEndereco() {
 		return driver.findElement(By.xpath(campoDeTextoEndereco));
 	}

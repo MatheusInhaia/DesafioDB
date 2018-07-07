@@ -1,7 +1,14 @@
 package Task;
 
+
+
+
+
+
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.interactions.Actions;
+
 
 import PageObject.InicialPage;
 import PageObject.SummaryPage;
@@ -21,32 +28,34 @@ public class EscolherProduto extends Metodos {
 		this.summaryPage = new SummaryPage(driver);
 	}
 	
-	public void acessaPaginaWomen() throws InterruptedException {
+	public void acessaPaginaWomen(){
 		clickElement(inicialPage.womenBotao());
 	}
 	
-	public void selecionaBlouse() throws InterruptedException {
+	public void selecionaBlouse(){
 		Actions action = new Actions(driver);
 		action.moveToElement(womenPage.blouseBotao()).perform();	
 	}
 	
-	public void adicionarAoCarrinho() throws InterruptedException {
+	public void adicionarAoCarrinho(){
 		clickElement(womenPage.addToCartBotao());
 	}
 	
-	public void meuCarrinhoBotao() throws InterruptedException {
-		Actions action = new Actions(driver);
-		action.moveToElement(womenPage.meuCarrinhoBotao()).perform();
+	public void meuCarrinhoBotao(){
+		//Actions action = new Actions(driver);
+		//action.moveToElement(womenPage.meuCarrinhoBotao()).perform();
 		clickElement(womenPage.meuCarrinhoBotao());
 	}
 	
-	public void proceedToCheckoutSummary() throws InterruptedException {
+	public void proceedToCheckoutSummary(){
 		clickElement(summaryPage.proceedToCheckoutBotao());
 	}
 	
-	public void continuarNoShopping() throws InterruptedException {
-		Actions action = new Actions(driver);
-		action.moveToElement(womenPage.continuarNoShopping()).perform();
+	public void continuarNoShopping(){
+		//Actions action = new Actions(driver);
+		//action.moveToElement(womenPage.continuarNoShopping()).perform();
+		//WebDriverWait wait = new WebDriverWait(driver,10);
+		//WebElement element = wait.until(ExpectedConditions.elementToBeClickable(womenPage.continuarNoShopping()));
 		clickElement(womenPage.continuarNoShopping());
 	}
 	
@@ -54,7 +63,6 @@ public class EscolherProduto extends Metodos {
 		acessaPaginaWomen();
 		selecionaBlouse();
 		adicionarAoCarrinho();
-		Thread.sleep(1000);
 		continuarNoShopping();
 		meuCarrinhoBotao();
 		proceedToCheckoutSummary();

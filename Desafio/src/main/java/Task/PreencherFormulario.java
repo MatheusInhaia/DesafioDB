@@ -1,5 +1,7 @@
 package Task;
 
+
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 
@@ -15,21 +17,14 @@ public class PreencherFormulario extends Metodos {
 		this.signIn = new SignInPage(driver);
 	}
 	
-	public void criarConta(String email) {
+	public void criarConta(String email){
 		inserirTexto(signIn.campoDeTextoEmail(), email);
+		clickElement(signIn.createAnAccountBotao());
 	}
 	
 	
 	//YOUR PERSONAL INFORMATION
-	public void selecionaTitulo(String titulo) throws InterruptedException {
-		if(titulo == "senhor" || titulo == "Senhor" ) {
-			clickElement(signIn.senhorBotao());
-		}else {
-			clickElement(signIn.SenhoraBotao());
-		}
-	}
-	
-	public void inserirPrimeiroNome(String nome) {
+	public void inserirPrimeiroNome(String nome){
 		inserirTexto(signIn.campoDeTextoPrimeiroNome(), nome);
 	}
 	
@@ -41,38 +36,15 @@ public class PreencherFormulario extends Metodos {
 		inserirTexto(signIn.campoDeTextoSenha(), senha);
 	}
 	
-	public void selecionaDiaAniversario(String dia) {
-		selecionarElemento( signIn.selecionaDiaAniversario(), dia);
-	}
-	
-	public void selecionaMesAniversario(String mes) {
-		selecionarElemento(signIn.selecionaMesAniversario(), mes);
-	}
-	
-	public void selecionaAnoAniversario(String ano) {
-		selecionarElemento(signIn.selecionaAnoAniversario(), ano);
-	}
-	
-	public void preencherInformacoesPessoais(String titulo, String primeiroNome, String ultimoNome, String senha, String dia, String mes, String ano) throws InterruptedException {
-		selecionaTitulo(titulo);
+	public void preencherInformacoesPessoais(String primeiroNome, String ultimoNome, String senha) throws InterruptedException {
+		Thread.sleep(3000);
 		inserirPrimeiroNome(primeiroNome);
 		inserirUltimoNome(ultimoNome);
 		inserirSenha(senha);
-		selecionaDiaAniversario(dia);
-		selecionaMesAniversario(mes);
-		selecionaAnoAniversario(ano);
 	}
 	
 	
 	//YOUR ADDRESS
-	public void inserirPrimeiroNomeAddress(String nome) {
-		inserirTexto(signIn.campoDeTextoPrimeiroNomeAddress(), nome);
-	}
-	
-	public void inserirUltimoNomeAddress(String nome) {
-		inserirTexto(signIn.campoDeTextoUltimoNomeAddress(), nome);
-	}
-	
 	public void inserirEndereco(String endereco) {
 		inserirTexto(signIn.campoDeTextoEndereco(), endereco);
 	}
@@ -81,16 +53,19 @@ public class PreencherFormulario extends Metodos {
 		inserirTexto(signIn.campoDeTextoCidade(), cidade);
 	}
 	
-	public void selecionaEstado(String estado) {
-		selecionarElemento(signIn.selecionaEstado(), estado);
+	public void selecionaEstado(){
+		signIn.selecionaEstado().sendKeys(Keys.ARROW_DOWN);
+		signIn.selecionaEstado().sendKeys(Keys.ENTER);
+		
 	}
 	
 	public void inserirCep(String cep) {
 		inserirTexto(signIn.campoDeTextoCep(), cep);
 	}
 	
-	public void selecionarPais(String pais) {
-		selecionarElemento(signIn.selecionaPais(), pais);
+	public void selecionarPais() {
+		signIn.selecionaPais().sendKeys(Keys.ARROW_DOWN);
+		signIn.selecionaPais().sendKeys(Keys.ENTER);
 	}
 	
 	public void inserirTelefone(String telefone) {
@@ -101,14 +76,12 @@ public class PreencherFormulario extends Metodos {
 		inserirTexto( signIn.campoDeTextoEnderecoAlternativo(), endereco);
 	}
 	
-	public void preencherEndereco(String primeiroNome, String ultimoNome, String endereco, String cidade, String estado, String cep, String pais, String telefone, String enderecoAlternativo) {
-		inserirPrimeiroNomeAddress(primeiroNome);
-		inserirUltimoNomeAddress(ultimoNome);
+	public void preencherEndereco(String endereco, String cidade, String cep, String telefone, String enderecoAlternativo){
 		inserirEndereco(endereco);
 		inserirCidade(cidade);
-		selecionaEstado(estado);
+		selecionaEstado();
 		inserirCep(cep);
-		selecionarPais(pais);
+		selecionarPais();
 		inserirTelefone(telefone);
 		inserirEnderecoAlternativo(enderecoAlternativo);
 	}

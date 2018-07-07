@@ -1,5 +1,7 @@
 package Utilitarios;
 
+
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -34,20 +36,33 @@ public WebDriver driver;
 	}
 	
 
-	public void clickElement(WebElement ele) throws InterruptedException {
-			//ele.wait(1);
-			if(ele.isDisplayed()) {
-				ele.click();
-			}
+	public void clickElement(WebElement ele){
+		if(ele.isDisplayed()) {
+			ele.click();
+		}
 	}
 	
-	public void selecionarElemento(WebElement ele, String texto) {
+	public void selecionarElementoByText(WebElement ele, String texto) {
 		Select select = new Select(ele);
-	
 		if(ele.isDisplayed()) {
 			select.selectByVisibleText(texto);
 		}
 	}
+	
+	public void selecionarElementoByValue(WebElement ele, String texto) {
+		Select select = new Select(ele);
+		if(ele.isDisplayed()) {
+			select.selectByValue(texto);
+		}
+	}
+	
+	public void selecionarElementoByIndice(WebElement ele, int indice) {
+		Select select = new Select(ele);
+		if(ele.isDisplayed()) {
+			select.deselectByIndex(indice);
+		}
+	}
+	
 	
 	public void inserirTexto(WebElement ele, String texto) {
 		if(ele.isDisplayed()) {
@@ -57,8 +72,4 @@ public WebDriver driver;
 	}
 	
 	
-	public void Wait() {
-		
-	}
-
 }
