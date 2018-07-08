@@ -23,14 +23,12 @@ public class ObterRelatorio {
 		extentReport.attachReporter(htmlReporter);
 	}
 	
-	
 	public static void startTest(String testDescription) {
 		if(extentReport == null) {
 			create(DEFAULT_DESCRIPTION, testDescription);	
 		}
 		logger = extentReport.createTest(testDescription);	
 	}
-	
 	
 	public static void log(Status logStatus, String message, String imagePath) {		
 		try {

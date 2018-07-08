@@ -12,7 +12,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Metodos {
 	
-public WebDriver driver;
+	private WebDriver driver;
 	
 	public Metodos(WebDriver driver) {
 		   this.driver = driver;
