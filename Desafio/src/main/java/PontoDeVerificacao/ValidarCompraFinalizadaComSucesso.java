@@ -1,7 +1,12 @@
 package PontoDeVerificacao;
 
 import org.openqa.selenium.WebDriver;
+
+import com.aventstack.extentreports.Status;
+
 import Utilitarios.Metodos;
+import Utilitarios.ObterRelatorio;
+import Utilitarios.TirarFoto;
 
 public class ValidarCompraFinalizadaComSucesso {
 
@@ -18,9 +23,10 @@ public class ValidarCompraFinalizadaComSucesso {
 	
 	public void validandoCompraFinalizadaComSucesso() {
 		if(metodos.possuiSequenciaDeCaracteres(mensagemDeSucesso)) {
-			System.out.println("compra com sucesso");
+			ObterRelatorio.log(Status.PASS, "Compra finalizada com sucesso.", TirarFoto.capture(driver));
 		}else {
-			System.out.println("Erro");
+			ObterRelatorio.log(Status.FAIL, "A compra não foi finalizada");
+			metodos.getDriver().quit();
 		}
 	}
 }

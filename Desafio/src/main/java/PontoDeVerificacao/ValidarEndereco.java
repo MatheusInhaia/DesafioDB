@@ -1,7 +1,11 @@
 package PontoDeVerificacao;
 
 import org.openqa.selenium.WebDriver;
+
+import com.aventstack.extentreports.Status;
+
 import Utilitarios.Metodos;
+import Utilitarios.ObterRelatorio;
 
 public class ValidarEndereco {
 	
@@ -33,7 +37,10 @@ public class ValidarEndereco {
 	}
 	
 	public void validandoEndereco(String endereco, String cidade, String estado, String pais) {
-		if(checandoEdereco(endereco) && checandoCidade(cidade) && checandoEstado(estado) && checandoPais(pais)) {	
+		if(checandoEdereco(endereco) && checandoCidade(cidade) && checandoEstado(estado) && checandoPais(pais)) {
+			ObterRelatorio.log(Status.PASS, "O endereço está correto.");
+		}else {
+			ObterRelatorio.log(Status.FAIL, "O endereço está incorreto.");
 		}
 	}
 	
