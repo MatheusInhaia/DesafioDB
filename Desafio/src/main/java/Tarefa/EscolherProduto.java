@@ -72,7 +72,7 @@ public class EscolherProduto{
 	public void proceedToCheckoutSummary(){
 		try {
 			metodos.clickElement(summaryPage.proceedToCheckoutBotao());
-			ObterRelatorio.log(Status.PASS, "ProceedToCheckout");
+			ObterRelatorio.log(Status.PASS, "Botão (Proceed To Checkout) foi clicado.");
 		}catch(Exception e) {
 			ObterRelatorio.log(Status.FAIL, "não foi possível clicar." + e);
 			metodos.getDriver().quit();
