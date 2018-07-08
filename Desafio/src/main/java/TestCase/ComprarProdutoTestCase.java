@@ -9,7 +9,8 @@ import org.openqa.selenium.WebDriver;
 import Task.ConcluirCompra;
 import Task.EscolherProduto;
 import Task.PreencherFormulario;
-import Utilitarios.Metodos;
+import Utilitarios.*;
+
 
 
 public class ComprarProdutoTestCase {
@@ -23,9 +24,9 @@ public class ComprarProdutoTestCase {
 	
 	@Before
 	public void setUp() {
+		ObterRelatorio.startTest("Iniciando o teste.");
 		driver = Metodos.getChromeDriver();
 		driver.manage().window().maximize();
-		
 		this.metodos = new Metodos(driver);
 		this.escolherProduto = new EscolherProduto(driver);
 		this.preencherFormulario = new PreencherFormulario(driver);
@@ -36,7 +37,7 @@ public class ComprarProdutoTestCase {
 	public void comprarProduto() throws InterruptedException  {
 		metodos.visita("http://automationpractice.com/");
 	    escolherProduto.escolhendoProduto("1 Product", "Blouse");
-		preencherFormulario.criarConta("Matheus.teste.45@gmail.com");
+		preencherFormulario.criarConta("Matheus.teste.46@gmail.com");
 		preencherFormulario.preencherInformacoesPessoais("Matheus", "Inhaia", "senha1");
 	    preencherFormulario.preencherEndereco("Rua 4, bairro Fiuza", "Porto Alegre", "Florida", "01234", "United States", "85682323", "Rua 3, bairro Sitio São José");
 		preencherFormulario.register();
@@ -45,6 +46,7 @@ public class ComprarProdutoTestCase {
 	
 	@After
 	public void fechar() {
+		ObterRelatorio.close();
 		metodos.getDriver().quit();
 	}
 }
