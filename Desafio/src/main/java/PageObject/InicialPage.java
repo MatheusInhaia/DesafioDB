@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 public class InicialPage {
 	
-	public WebDriver driver; 
+	private WebDriver driver; 
 	
 	
 	String womenBotao = "//*[@id=\"block_top_menu\"]/ul/li[1]/a";

@@ -8,11 +8,12 @@ import org.openqa.selenium.WebElement;
 
 public class ShippingPage {
 
-	public WebDriver driver;
+	private WebDriver driver;
 	
 	
 	String termosDeServicoClick = "//*[@id=\"cgv\"]";
 	String proceedToCheckout = "//*[@id=\"form\"]/p/button";
+	String valorDoFrete = "//*[@id=\"form\"]/div/div[2]/div[1]/div/div/table/tbody/tr/td[4]/div";
 	
 	
 	public ShippingPage(WebDriver driver) {
@@ -25,5 +26,9 @@ public class ShippingPage {
 	
 	public WebElement proceedToCheckout() {
 		return driver.findElement(By.xpath(proceedToCheckout));
+	}
+	
+	public WebElement valorDoFrete() {
+		return driver.findElement(By.xpath(valorDoFrete));
 	}
 }

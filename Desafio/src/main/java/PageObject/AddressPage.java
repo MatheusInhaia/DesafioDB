@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class AddressPage {
 	
-	public WebDriver driver;
+	private WebDriver driver;
 	
 	String proceedToCheckout = "//*[@id=\"center_column\"]/form/p/button";
 

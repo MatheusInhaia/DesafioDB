@@ -6,12 +6,14 @@ import org.openqa.selenium.WebElement;
 
 public class PaymentPage {
 
-public WebDriver driver;
+	private WebDriver driver;
 	
 	
 	String transferenciaBancaria = "//*[@id=\"HOOK_PAYMENT\"]/div[1]/div/p";
 	String pagarComCheque = "//*[@id=\"HOOK_PAYMENT\"]/div[2]/div/p";
 	String IConfirmMyOrderBotao = "//*[@id=\"cart_navigation\"]/button";
+	String valorTotal = "//*[@id=\"total_price\"]";
+	
 	
 	public PaymentPage(WebDriver driver) {
 		this.driver = driver;
@@ -25,7 +27,11 @@ public WebDriver driver;
 		return driver.findElement(By.xpath(pagarComCheque));
 	}
 	
-	public WebElement IConfirmMyOrderBotao() {
+	public WebElement iConfirmMyOrderBotao() {
 		return driver.findElement(By.xpath(IConfirmMyOrderBotao));
+	}
+	
+	public WebElement valorTotal() {
+		return driver.findElement(By.xpath(valorTotal));
 	}
 }

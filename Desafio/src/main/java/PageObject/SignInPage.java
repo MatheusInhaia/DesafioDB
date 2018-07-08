@@ -6,17 +6,16 @@ import org.openqa.selenium.WebElement;
 
 public class SignInPage {
 
-	public WebDriver driver; 
+	private WebDriver driver; 
+	
 	
 	String campoDeTextoEmail = "//*[@id=\"email_create\"]";
 	String createAnAccountBotao = "//*[@id=\"SubmitCreate\"]";
-	
 	
 	//YOUR PERSONAL INFORMATION
 	String campoDeTextoPrimeiroNome = "//*[@id=\"customer_firstname\"]";
 	String campoDeTextoUltimoNome = "//*[@id=\"customer_lastname\"]";
 	String CampoDeTextoSenha = "//*[@id=\"passwd\"]";
-	
 	
 	//YOUR ADDRESS
 	String campoDeTextoEndereco = "//*[@id=\"address1\"]";
