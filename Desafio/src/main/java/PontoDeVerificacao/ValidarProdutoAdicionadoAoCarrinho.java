@@ -1,7 +1,12 @@
 package PontoDeVerificacao;
 
 import org.openqa.selenium.WebDriver;
+
+import com.aventstack.extentreports.Status;
+
 import Utilitarios.Metodos;
+import Utilitarios.ObterRelatorio;
+import Utilitarios.TirarFoto;
 
 public class ValidarProdutoAdicionadoAoCarrinho {
 
@@ -26,8 +31,9 @@ public class ValidarProdutoAdicionadoAoCarrinho {
 	
 	public void validandoProduto(String quantidade, String nomeProduto) {
 		if(checandoQuantidade(quantidade) && checandoNomeDoProduto(nomeProduto)) {
-			
-		}
-			
+			ObterRelatorio.log(Status.PASS, "O produto adicionado ao carrinho está correto.", TirarFoto.capture(driver));
+		}else{
+			ObterRelatorio.log(Status.FAIL, "O produto está incorreto.");
+		}	
 	}
 }
