@@ -3,6 +3,7 @@ package Task;
 
 import org.openqa.selenium.WebDriver;
 
+import com.aventstack.extentreports.Status;
 
 import PageObject.AddressPage;
 import PageObject.PaymentPage;
@@ -11,6 +12,7 @@ import PontoDeVerificacao.ValidarCompraFinalizadaComSucesso;
 import PontoDeVerificacao.ValidarEndereco;
 import PontoDeVerificacao.ValidarValorTotalDaCompra;
 import Utilitarios.Metodos;
+import Utilitarios.ObterRelatorio;
 
 public class ConcluirCompra{
 
@@ -35,23 +37,54 @@ public class ConcluirCompra{
 	}
 	
 	public void clicarProceedToCheckoutAdressPage() {
-		metodos.clickElement(addressPage.proceedToCheckout());
+		try {
+			metodos.clickElement(addressPage.proceedToCheckout());
+			ObterRelatorio.log(Status.PASS, "Botão proceedToCheckout foi clicado.");
+		}catch(Exception e) {
+			ObterRelatorio.log(Status.FAIL, "Erro ao tentar clicar no botão." + e);
+			metodos.getDriver().quit();
+		}	
 	}
 	
 	public void concordaComTermosDeServico() {
-		metodos.clickElement(shippingPage.termosDeServicoClick());	
+		try {
+			metodos.clickElement(shippingPage.termosDeServicoClick());
+			ObterRelatorio.log(Status.PASS, "Selecionado concordar com os termos.");
+		}catch(Exception e) {
+			ObterRelatorio.log(Status.FAIL, "Erro ao selecionar concordar com os termos." + e);
+			metodos.getDriver().quit();
+		}		
 	}
 	
 	public void clicarProceedToCheckoutShippingPage() {
-		metodos.clickElement(shippingPage.proceedToCheckout());
+		try {
+			metodos.clickElement(shippingPage.proceedToCheckout());
+			ObterRelatorio.log(Status.PASS, "Botão proceedToCheckout foi clicado.");
+		}catch(Exception e) {
+			ObterRelatorio.log(Status.FAIL, "Erro ao tentar clicar no botão." + e);
+			metodos.getDriver().quit();
+		}
 	}
 	
 	public void pagarComTranseferenciaBancaria() {
-		metodos.clickElement(paymentPage.transferenciaBancaria());
+		try {
+			metodos.clickElement(paymentPage.transferenciaBancaria());
+			ObterRelatorio.log(Status.PASS, "botão pagar com tranferência bancária clicado.");
+		}catch(Exception e) {
+			ObterRelatorio.log(Status.FAIL, "Erro ao tentar clicar no botão." + e);
+			metodos.getDriver().quit();
+		}	
 	}
 	
 	public void clicarIConfirmMyOrder() {
-		metodos.clickElement(paymentPage.iConfirmMyOrderBotao());
+		try {
+			metodos.clickElement(paymentPage.iConfirmMyOrderBotao());
+			ObterRelatorio.log(Status.PASS, "botão (I Confirm my order) foi clicado.");
+		}catch(Exception e) {
+			ObterRelatorio.log(Status.FAIL, "Erro ao tentar clicar no botão." + e);
+			metodos.getDriver().quit();
+		}
+		
 	}
 	
 	public void concluiCompra(String endereco, String cidade, String estado, String pais) throws InterruptedException{
