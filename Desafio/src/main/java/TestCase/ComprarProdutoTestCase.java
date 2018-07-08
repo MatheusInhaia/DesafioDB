@@ -1,5 +1,6 @@
 package TestCase;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -13,8 +14,7 @@ import Utilitarios.Metodos;
 
 public class ComprarProdutoTestCase {
 
-	public WebDriver driver;
-	
+	private WebDriver driver;
 	private Metodos metodos;
 	private EscolherProduto escolherProduto;
 	private PreencherFormulario preencherFormulario;
@@ -29,9 +29,7 @@ public class ComprarProdutoTestCase {
 		this.metodos = new Metodos(driver);
 		this.escolherProduto = new EscolherProduto(driver);
 		this.preencherFormulario = new PreencherFormulario(driver);
-		this.concluirCompra = new ConcluirCompra(driver);
-	
-		
+		this.concluirCompra = new ConcluirCompra(driver);	
 	}
 	
 	@Test
@@ -45,5 +43,8 @@ public class ComprarProdutoTestCase {
 		concluirCompra.concluiCompra("Rua 4, bairro Fiuza", "Porto Alegre", "Florida", "United States");
 	}
 	
-	
+	@After
+	public void fechar() {
+		metodos.getDriver().quit();
+	}
 }
