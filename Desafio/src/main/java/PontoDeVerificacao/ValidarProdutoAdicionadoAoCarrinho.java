@@ -1,23 +1,19 @@
 package PontoDeVerificacao;
 
 import org.openqa.selenium.WebDriver;
-
-import PageObject.SummaryPage;
 import Utilitarios.Metodos;
 
 public class ValidarProdutoAdicionadoAoCarrinho {
 
 	
-	public WebDriver driver;
-	public Metodos metodos;
-	public SummaryPage summaryPage;
+	private WebDriver driver;
+	private Metodos metodos;
 	
 	
 	
 	public ValidarProdutoAdicionadoAoCarrinho(WebDriver driver){
 		this.driver = driver;
-		this.metodos = new Metodos(driver);
-		
+		this.metodos = new Metodos(driver);	
 	}
 	
 	public boolean checandoQuantidade(String quantidade) {

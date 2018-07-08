@@ -7,32 +7,35 @@ import org.openqa.selenium.WebDriver;
 import PageObject.SignInPage;
 import Utilitarios.Metodos;
 
-public class PreencherFormulario extends Metodos {
+public class PreencherFormulario{
 
+	private WebDriver driver;
+	private Metodos metodos;
 	private SignInPage signIn;
 	
 	public PreencherFormulario(WebDriver driver) {
-		super(driver);
+		this.driver = driver;
+		this.metodos = new Metodos(driver);
 		this.signIn = new SignInPage(driver);
 	}
 	
 	public void criarConta(String email){
-		inserirTexto(signIn.campoDeTextoEmail(), email);
-		clickElement(signIn.createAnAccountBotao());
+		metodos.inserirTexto(signIn.campoDeTextoEmail(), email);
+		metodos.clickElement(signIn.createAnAccountBotao());
 	}
 	
 	
 	//YOUR PERSONAL INFORMATION
 	public void inserirPrimeiroNome(String nome){
-		inserirTexto(signIn.campoDeTextoPrimeiroNome(), nome);
+		metodos.inserirTexto(signIn.campoDeTextoPrimeiroNome(), nome);
 	}
 	
 	public void inserirUltimoNome(String nome) {
-		inserirTexto(signIn.campoDeTextoUltimoNome(), nome);
+		metodos.inserirTexto(signIn.campoDeTextoUltimoNome(), nome);
 	}
 	
 	public void inserirSenha(String senha) {
-		inserirTexto(signIn.campoDeTextoSenha(), senha);
+		metodos.inserirTexto(signIn.campoDeTextoSenha(), senha);
 	}
 	
 	public void preencherInformacoesPessoais(String primeiroNome, String ultimoNome, String senha) throws InterruptedException {
@@ -45,31 +48,31 @@ public class PreencherFormulario extends Metodos {
 	
 	//YOUR ADDRESS
 	public void inserirEndereco(String endereco) {
-		inserirTexto(signIn.campoDeTextoEndereco(), endereco);
+		metodos.inserirTexto(signIn.campoDeTextoEndereco(), endereco);
 	}
 	
 	public void inserirCidade(String cidade) {
-		inserirTexto(signIn.campoDeTextoCidade(), cidade);
+		metodos.inserirTexto(signIn.campoDeTextoCidade(), cidade);
 	}
 	
 	public void selecionaEstado(String estado){
-		selecionarElementoByText(signIn.selecionaEstado(), estado);
+		metodos.selecionarElementoByText(signIn.selecionaEstado(), estado);
 	}
 	
 	public void inserirCep(String cep) {
-		inserirTexto(signIn.campoDeTextoCep(), cep);
+		metodos.inserirTexto(signIn.campoDeTextoCep(), cep);
 	}
 	
 	public void selecionarPais(String pais) {
-		selecionarElementoByText(signIn.selecionaPais(), pais);
+		metodos.selecionarElementoByText(signIn.selecionaPais(), pais);
 	}
 	
 	public void inserirTelefone(String telefone) {
-		inserirTexto(signIn.campoDeTextoTelefone(), telefone);
+		metodos.inserirTexto(signIn.campoDeTextoTelefone(), telefone);
 	}
 	
 	public void inserirEnderecoAlternativo(String endereco) {
-		inserirTexto( signIn.campoDeTextoEnderecoAlternativo(), endereco);
+		metodos.inserirTexto( signIn.campoDeTextoEnderecoAlternativo(), endereco);
 	}
 	
 	public void preencherEndereco(String endereco, String cidade, String estado, String cep, String pais, String telefone, String enderecoAlternativo){
@@ -85,7 +88,7 @@ public class PreencherFormulario extends Metodos {
 	
 	
 	public void register(){
-		clickElement(signIn.registerBotao());
+		metodos.clickElement(signIn.registerBotao());
 	}
 	
 }

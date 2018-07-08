@@ -38,7 +38,7 @@ public class ComprarProdutoTestCase {
 	public void comprarProduto() throws InterruptedException  {
 		metodos.visita("http://automationpractice.com/");
 	    escolherProduto.escolhendoProduto("1 Product", "Blouse");
-		preencherFormulario.criarConta("Matheus.teste.12@gmail.com");
+		preencherFormulario.criarConta("Matheus.teste.45@gmail.com");
 		preencherFormulario.preencherInformacoesPessoais("Matheus", "Inhaia", "senha1");
 	    preencherFormulario.preencherEndereco("Rua 4, bairro Fiuza", "Porto Alegre", "Florida", "01234", "United States", "85682323", "Rua 3, bairro Sitio São José");
 		preencherFormulario.register();

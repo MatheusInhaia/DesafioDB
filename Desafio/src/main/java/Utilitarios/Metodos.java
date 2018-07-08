@@ -6,11 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-
-
-
 import io.github.bonigarcia.wdm.WebDriverManager;
-
 
 
 
@@ -22,7 +18,6 @@ public WebDriver driver;
 		   this.driver = driver;
 	}
 
-	
 	public Metodos visita(String url) {
 		   driver.get(url);
 		   return this;
@@ -33,12 +28,10 @@ public WebDriver driver;
 		return new ChromeDriver();
 	}
 	
-	
 	public WebDriver getDriver() {
 		return driver;
 	}
 	
-
 	public void clickElement(WebElement ele){
 		if(ele.isEnabled()) {
 			ele.click();
@@ -78,8 +71,5 @@ public WebDriver driver;
 		if(driver.getPageSource().contains(palavra)) {
 		}
 		return driver.getPageSource().contains(palavra);
-	}
-	
-	
-	
+	}		
 }

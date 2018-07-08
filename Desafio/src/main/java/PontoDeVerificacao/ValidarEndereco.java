@@ -1,17 +1,13 @@
 package PontoDeVerificacao;
 
 import org.openqa.selenium.WebDriver;
-
-import PageObject.SummaryPage;
 import Utilitarios.Metodos;
 
 public class ValidarEndereco {
 	
 
-	public WebDriver driver;
-	public Metodos metodos;
-	public SummaryPage summaryPage;
-	
+	private WebDriver driver;
+	private Metodos metodos;
 	
 	
 	public ValidarEndereco(WebDriver driver){
@@ -37,8 +33,7 @@ public class ValidarEndereco {
 	}
 	
 	public void validandoEndereco(String endereco, String cidade, String estado, String pais) {
-		if(checandoEdereco(endereco) && checandoCidade(cidade) && checandoEstado(estado) && checandoPais(pais)) {
-			
+		if(checandoEdereco(endereco) && checandoCidade(cidade) && checandoEstado(estado) && checandoPais(pais)) {	
 		}
 	}
 	
