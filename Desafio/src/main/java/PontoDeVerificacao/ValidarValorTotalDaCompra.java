@@ -1,9 +1,13 @@
 package PontoDeVerificacao;
 
 import org.openqa.selenium.WebDriver;
+
+import com.aventstack.extentreports.Status;
+
 import PageObject.ShippingPage;
 import PageObject.WomenPage;
 import Utilitarios.Metodos;
+import Utilitarios.ObterRelatorio;
 
 public class ValidarValorTotalDaCompra {
 
@@ -22,14 +26,17 @@ public class ValidarValorTotalDaCompra {
 		this.driver = driver;
 		this.womenPage = new WomenPage(driver);
 		this.shippingPage = new ShippingPage(driver);
-		this.metodos = new Metodos(driver);
-		
+		this.metodos = new Metodos(driver);	
 	}
 	
 	public void pegarValorDaRoupa() {
+		try {
 		String valor = womenPage.valorDaBlouse().getText();
 		if (!valor.isEmpty()) valor = valor.substring (1);
-		auxiliarValorDaRoupa = Double.parseDouble(valor);   
+		auxiliarValorDaRoupa = Double.parseDouble(valor); 
+		}catch(Exception e){
+			
+		}
 	}
 	
 	public void pegarValorDoFrete() {
@@ -47,9 +54,10 @@ public class ValidarValorTotalDaCompra {
 	public void validandoValorTotalDaCompra() {
 		calcularValorTotal();
 		if(metodos.possuiSequenciaDeCaracteres(valorTotalFinal)) {
-			System.out.println("valor correto");
+			ObterRelatorio.log(Status.PASS, "O valor total está correto.");
 		}else {
-			System.out.println("valo esta errado");
+			ObterRelatorio.log(Status.FAIL, "O valor total está incorreto.");
+			metodos.getDriver().quit();
 		}
 	}
 	

@@ -34,6 +34,7 @@ public class ValidarProdutoAdicionadoAoCarrinho {
 			ObterRelatorio.log(Status.PASS, "O produto adicionado ao carrinho está correto.", TirarFoto.capture(driver));
 		}else{
 			ObterRelatorio.log(Status.FAIL, "O produto está incorreto.");
+			metodos.getDriver().quit();
 		}	
 	}
 }
