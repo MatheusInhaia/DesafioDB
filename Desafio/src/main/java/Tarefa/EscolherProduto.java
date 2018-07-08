@@ -1,4 +1,4 @@
-package Task;
+package Tarefa;
 
 import org.openqa.selenium.WebDriver;
 

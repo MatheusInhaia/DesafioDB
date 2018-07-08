@@ -1,14 +1,13 @@
-package TestCase;
+package CasoDeTeste;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
-
-import Task.ConcluirCompra;
-import Task.EscolherProduto;
-import Task.PreencherFormulario;
+import Tarefa.ConcluirCompra;
+import Tarefa.EscolherProduto;
+import Tarefa.PreencherFormulario;
 import Utilitarios.*;
 
 
