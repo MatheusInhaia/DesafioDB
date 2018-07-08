@@ -40,6 +40,7 @@ public class EscolherProduto{
 			ObterRelatorio.log(Status.PASS, "Página women acessada.");
 		}catch(Exception e) {
 			ObterRelatorio.log(Status.FAIL, "Erro ao tentar acessar a página women" + e);
+			metodos.getDriver().quit();
 		}
 	}
 	
@@ -54,6 +55,7 @@ public class EscolherProduto{
 			ObterRelatorio.log(Status.PASS, "Produto adicionado ao carrinho.");
 		}catch(Exception e) {
 			ObterRelatorio.log(Status.FAIL, "Erro ao tentar adicionar o produto." + e);
+			metodos.getDriver().quit();
 		}	
 	}
 	
@@ -63,6 +65,7 @@ public class EscolherProduto{
 			ObterRelatorio.log(Status.PASS, "Acessando meu carrinho.");
 		}catch(Exception e) {
 			ObterRelatorio.log(Status.FAIL, "não foi possível acessar o carrinho." + e);
+			metodos.getDriver().quit();
 		}		
 	}
 	
@@ -72,6 +75,7 @@ public class EscolherProduto{
 			ObterRelatorio.log(Status.PASS, "ProceedToCheckout");
 		}catch(Exception e) {
 			ObterRelatorio.log(Status.FAIL, "não foi possível clicar." + e);
+			metodos.getDriver().quit();
 		}		
 	}
 	
@@ -81,6 +85,7 @@ public class EscolherProduto{
 			ObterRelatorio.log(Status.PASS, "Continuar no shopping.");
 		}catch(Exception e) {
 			ObterRelatorio.log(Status.FAIL, "não foi possível clicar." + e);
+			metodos.getDriver().quit();
 		}
 		
 	}
