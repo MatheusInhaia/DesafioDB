@@ -13,6 +13,7 @@ import org.openqa.selenium.interactions.Actions;
 import PageObject.InicialPage;
 import PageObject.SummaryPage;
 import PageObject.WomenPage;
+import PontoDeVerificacao.ValidarProdutoAdicionadoAoCarrinho;
 import Utilitarios.Metodos;
 
 public class EscolherProduto extends Metodos {
@@ -20,12 +21,14 @@ public class EscolherProduto extends Metodos {
 	private InicialPage inicialPage;
 	private WomenPage womenPage;
 	private SummaryPage summaryPage;
+	private ValidarProdutoAdicionadoAoCarrinho validarProdutoAdiconadoAoCarrinho;
 	
 	public EscolherProduto(WebDriver driver) {
 		super(driver);
 		this.inicialPage = new InicialPage(driver);
 		this.womenPage = new WomenPage(driver);
 		this.summaryPage = new SummaryPage(driver);
+		this.validarProdutoAdiconadoAoCarrinho = new ValidarProdutoAdicionadoAoCarrinho(driver);
 	}
 	
 	public void acessaPaginaWomen(){
@@ -42,8 +45,6 @@ public class EscolherProduto extends Metodos {
 	}
 	
 	public void meuCarrinhoBotao(){
-		//Actions action = new Actions(driver);
-		//action.moveToElement(womenPage.meuCarrinhoBotao()).perform();
 		clickElement(womenPage.meuCarrinhoBotao());
 	}
 	
@@ -52,19 +53,16 @@ public class EscolherProduto extends Metodos {
 	}
 	
 	public void continuarNoShopping(){
-		//Actions action = new Actions(driver);
-		//action.moveToElement(womenPage.continuarNoShopping()).perform();
-		//WebDriverWait wait = new WebDriverWait(driver,10);
-		//WebElement element = wait.until(ExpectedConditions.elementToBeClickable(womenPage.continuarNoShopping()));
 		clickElement(womenPage.continuarNoShopping());
 	}
 	
-	public void escolhendoProduto() throws InterruptedException {
+	public void escolhendoProduto(String quantidade, String nomeProduto) throws InterruptedException {
 		acessaPaginaWomen();
 		selecionaBlouse();
 		adicionarAoCarrinho();
 		continuarNoShopping();
 		meuCarrinhoBotao();
+		validarProdutoAdiconadoAoCarrinho.validandoProduto(quantidade, nomeProduto);
 		proceedToCheckoutSummary();
 	}
 }

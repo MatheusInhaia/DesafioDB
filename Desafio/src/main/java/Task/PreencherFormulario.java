@@ -1,7 +1,6 @@
 package Task;
 
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 
@@ -53,19 +52,16 @@ public class PreencherFormulario extends Metodos {
 		inserirTexto(signIn.campoDeTextoCidade(), cidade);
 	}
 	
-	public void selecionaEstado(){
-		signIn.selecionaEstado().sendKeys(Keys.ARROW_DOWN);
-		signIn.selecionaEstado().sendKeys(Keys.ENTER);
-		
+	public void selecionaEstado(String estado){
+		selecionarElementoByText(signIn.selecionaEstado(), estado);
 	}
 	
 	public void inserirCep(String cep) {
 		inserirTexto(signIn.campoDeTextoCep(), cep);
 	}
 	
-	public void selecionarPais() {
-		signIn.selecionaPais().sendKeys(Keys.ARROW_DOWN);
-		signIn.selecionaPais().sendKeys(Keys.ENTER);
+	public void selecionarPais(String pais) {
+		selecionarElementoByText(signIn.selecionaPais(), pais);
 	}
 	
 	public void inserirTelefone(String telefone) {
@@ -76,19 +72,19 @@ public class PreencherFormulario extends Metodos {
 		inserirTexto( signIn.campoDeTextoEnderecoAlternativo(), endereco);
 	}
 	
-	public void preencherEndereco(String endereco, String cidade, String cep, String telefone, String enderecoAlternativo){
+	public void preencherEndereco(String endereco, String cidade, String estado, String cep, String pais, String telefone, String enderecoAlternativo){
 		inserirEndereco(endereco);
 		inserirCidade(cidade);
-		selecionaEstado();
+		selecionaEstado(estado);
 		inserirCep(cep);
-		selecionarPais();
+		selecionarPais(pais);
 		inserirTelefone(telefone);
 		inserirEnderecoAlternativo(enderecoAlternativo);
 	}
 	
 	
 	
-	public void register() throws InterruptedException {
+	public void register(){
 		clickElement(signIn.registerBotao());
 	}
 	

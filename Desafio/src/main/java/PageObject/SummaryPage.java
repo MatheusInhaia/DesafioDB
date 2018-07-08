@@ -11,6 +11,7 @@ public class SummaryPage {
 	String proceedToCheckoutBotao = "//*[@id=\"center_column\"]/p[2]/a[1]";
 	
 	
+	
 	public SummaryPage(WebDriver driver) {
 		this.driver = driver;
 	}

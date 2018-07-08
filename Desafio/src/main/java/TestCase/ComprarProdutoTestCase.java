@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
+
 import Task.ConcluirCompra;
 import Task.EscolherProduto;
 import Task.PreencherFormulario;
@@ -19,6 +20,7 @@ public class ComprarProdutoTestCase {
 	private PreencherFormulario preencherFormulario;
 	private ConcluirCompra concluirCompra;
 	
+	
 	@Before
 	public void setUp() {
 		driver = Metodos.getChromeDriver();
@@ -28,18 +30,19 @@ public class ComprarProdutoTestCase {
 		this.escolherProduto = new EscolherProduto(driver);
 		this.preencherFormulario = new PreencherFormulario(driver);
 		this.concluirCompra = new ConcluirCompra(driver);
+	
 		
 	}
 	
 	@Test
 	public void comprarProduto() throws InterruptedException  {
 		metodos.visita("http://automationpractice.com/");
-	    escolherProduto.escolhendoProduto();
-		preencherFormulario.criarConta("Matheus.teste.9@gmail.com");
+	    escolherProduto.escolhendoProduto("1 Product", "Blouse");
+		preencherFormulario.criarConta("Matheus.teste.12@gmail.com");
 		preencherFormulario.preencherInformacoesPessoais("Matheus", "Inhaia", "senha1");
-		preencherFormulario.preencherEndereco("Rua 4, bairro Fiuza", "Porto Alegre", "01234", "85682323", "Rua 3, bairro Sitio São José");
+	    preencherFormulario.preencherEndereco("Rua 4, bairro Fiuza", "Porto Alegre", "Florida", "01234", "United States", "85682323", "Rua 3, bairro Sitio São José");
 		preencherFormulario.register();
-		concluirCompra.concluiCompra();
+		concluirCompra.concluiCompra("Rua 4, bairro Fiuza", "Porto Alegre", "Florida", "United States");
 	}
 	
 	
