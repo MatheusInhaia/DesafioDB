@@ -39,7 +39,7 @@ public class ConcluirCompra{
 	public void clicarProceedToCheckoutAdressPage() {
 		try {
 			metodos.clickElement(addressPage.proceedToCheckout());
-			ObterRelatorio.log(Status.PASS, "Botão proceedToCheckout foi clicado.");
+			ObterRelatorio.log(Status.PASS, "Botão proceed To Checkout foi clicado.");
 		}catch(Exception e) {
 			ObterRelatorio.log(Status.FAIL, "Erro ao tentar clicar no botão." + e);
 			metodos.getDriver().quit();
@@ -59,7 +59,7 @@ public class ConcluirCompra{
 	public void clicarProceedToCheckoutShippingPage() {
 		try {
 			metodos.clickElement(shippingPage.proceedToCheckout());
-			ObterRelatorio.log(Status.PASS, "Botão proceedToCheckout foi clicado.");
+			ObterRelatorio.log(Status.PASS, "Botão proceed To Checkout foi clicado.");
 		}catch(Exception e) {
 			ObterRelatorio.log(Status.FAIL, "Erro ao tentar clicar no botão." + e);
 			metodos.getDriver().quit();
@@ -79,7 +79,7 @@ public class ConcluirCompra{
 	public void clicarIConfirmMyOrder() {
 		try {
 			metodos.clickElement(paymentPage.iConfirmMyOrderBotao());
-			ObterRelatorio.log(Status.PASS, "botão (I Confirm my order) foi clicado.");
+			ObterRelatorio.log(Status.PASS, "botão I Confirm my order foi clicado.");
 		}catch(Exception e) {
 			ObterRelatorio.log(Status.FAIL, "Erro ao tentar clicar no botão." + e);
 			metodos.getDriver().quit();
