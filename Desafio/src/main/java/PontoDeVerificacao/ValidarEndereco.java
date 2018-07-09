@@ -41,6 +41,7 @@ public class ValidarEndereco {
 			ObterRelatorio.log(Status.PASS, "O endereço está correto.");
 		}else {
 			ObterRelatorio.log(Status.FAIL, "O endereço está incorreto.");
+			metodos.getDriver().quit();
 		}
 	}
 	
