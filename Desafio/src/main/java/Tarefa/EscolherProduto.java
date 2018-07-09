@@ -72,9 +72,9 @@ public class EscolherProduto{
 	public void proceedToCheckoutSummary(){
 		try {
 			metodos.clickElement(summaryPage.proceedToCheckoutBotao());
-			ObterRelatorio.log(Status.PASS, "Botão (Proceed To Checkout) foi clicado.");
+			ObterRelatorio.log(Status.PASS, "Botão Proceed To Checkout foi clicado.");
 		}catch(Exception e) {
-			ObterRelatorio.log(Status.FAIL, "não foi possível clicar." + e);
+			ObterRelatorio.log(Status.FAIL, "Não foi possível clicar." + e);
 			metodos.getDriver().quit();
 		}		
 	}
@@ -84,7 +84,7 @@ public class EscolherProduto{
 			metodos.clickElement(womenPage.continuarNoShopping());
 			ObterRelatorio.log(Status.PASS, "Continuar no shopping.");
 		}catch(Exception e) {
-			ObterRelatorio.log(Status.FAIL, "não foi possível clicar." + e);
+			ObterRelatorio.log(Status.FAIL, "Não foi possível clicar." + e);
 			metodos.getDriver().quit();
 		}
 		

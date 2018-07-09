@@ -97,7 +97,7 @@ public class PreencherFormulario{
 	public void selecionaEstado(String estado){
 		try {
 			metodos.selecionarElementoByText(signIn.selecionaEstado(), estado);
-			ObterRelatorio.log(Status.PASS, "estado foi selecionado.");
+			ObterRelatorio.log(Status.PASS, "Estado foi selecionado.");
 			}catch(Exception e) {
 				ObterRelatorio.log(Status.FAIL, "Não foi possível selecionar o estado." + e);
 				metodos.getDriver().quit();
